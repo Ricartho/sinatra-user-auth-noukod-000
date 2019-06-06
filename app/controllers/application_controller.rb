@@ -16,8 +16,9 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/registrations' do
-    binding.pry
+   
     @user = User.find_by(email: params["email"], password: params["password"])
+     binding.pry
     # @user.save
     # session[:user_id] = @user.id
     redirect '/users/home'
