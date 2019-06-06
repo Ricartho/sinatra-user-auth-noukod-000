@@ -16,7 +16,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/registrations' do
-   
+    puts params
     @user = User.find_by(name: params["name"],email: params["email"], password: params["password"])
     # binding.pry
     @user.save
